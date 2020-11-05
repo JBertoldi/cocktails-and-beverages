@@ -9,6 +9,12 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.create(cocktail_params)
+
+    if @cocktail.valid?
+      redirect_to cocktail_path(@cocktail), notice: 'Rejoyce! Your cocktail was added successfully!'
+    else
+      render :new
+    end
   end
 
   def show
