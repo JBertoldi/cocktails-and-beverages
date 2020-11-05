@@ -1,15 +1,17 @@
 class DosesController < ApplicationController
-  before_action :set_cocktail
+  before_action :set_cocktail, except: %i[destroy]
 
+# the url will be get /cocktails/:cocktail_id/doses/mew 
   def new
     @dose = Dose.new
   end
 
   def create
-    @dose = Dose.create(dose_params)
+    @dose = Dose.new(dose_params)
+    @dose.cocktail = @cocktail
 
-    if @dose.valid?
-      redirect_to cocktail_path(@cocktail.id), notice: 'Rejoyce! Your cocktail was added successfully!'
+    if @dose.save
+      redirect_to cocktail_path(@cocktail)
     else
       render :new
     end
@@ -18,15 +20,19 @@ class DosesController < ApplicationController
   def destroy
     @dose = Dose.find(params[:id])
     @dose.destroy
+
+    redirect_to cocktail_path(@dose.cocktail), alert: 'Ingredient deleted'
   end
 
   private
 
   def dose_params
-    params.require(:doses).permit(:description, :cocktail_id, :ingredient_id)
+    params.require(:dose).permit(:description, :ingredient_id)
   end
-  
+
   def set_cocktail
-    @cocktail = Cocktail.find(params[:id])
+    @cocktail = Cocktail.find(params[:cocktail_id])
   end
 end
+
+# check tooltips in bootstrap

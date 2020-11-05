@@ -1,2 +1,10 @@
 <h1>Cocktails#show</h1>
 <p>Find me in app/views/cocktails/show.html.erb</p>
+<% if notice.present? %>
+  <%= notice.html_safe %>
+<% end %>
+
+<h3>Ingredients:</h3>
+<ul>
+
+<%# [@cocktail, @dose] %>
