@@ -1,7 +1,6 @@
 class DosesController < ApplicationController
   before_action :set_cocktail, except: %i[destroy]
 
-# the url will be get /cocktails/:cocktail_id/doses/mew 
   def new
     @dose = Dose.new
   end
@@ -27,12 +26,10 @@ class DosesController < ApplicationController
   private
 
   def dose_params
-    params.require(:dose).permit(:description, :ingredient_id)
+    params.require(:dose).permit(:measurement, :ingredient_id)
   end
 
   def set_cocktail
     @cocktail = Cocktail.find(params[:cocktail_id])
   end
 end
-
-# check tooltips in bootstrap

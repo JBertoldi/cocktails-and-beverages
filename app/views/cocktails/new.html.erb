@@ -1,9 +1,8 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
-<%# create a simple form for %>
-<%= simple_form_for @dose do |f| %>
-  <%= f.input :name, input_html: {:autocomplete: 'off'} %>
-  <%= f.submit %>
-<% end %>
+<div class='container-sm my-5'>
+  <h3>Create a Cocktail</h3>
+  <%= simple_form_for @cocktail, html: { autocomplete: 'off' } do |f| %>
+    <%= f.input :name %>
+    <%= f.submit class: 'btn btn-outline-dark' %><%= link_to 'Go Back', cocktails_path, class: 'btn btn-outline-dark mx-5' %>
+  <% end %>
+</div>
 
-<%# add cancel button %>

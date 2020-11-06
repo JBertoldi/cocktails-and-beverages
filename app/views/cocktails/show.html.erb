@@ -1,10 +1,23 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
-<% if notice.present? %>
-  <%= notice.html_safe %>
-<% end %>
+<div class='container-sm my-5'>
+  <h2><%= @cocktail.name %></h2>
 
-<h3>Ingredients:</h3>
-<ul>
+  <% if notice.present? %>
+    <%= notice.html_safe %>
+  <% end %>
+    <h4 class='my-3'>Ingredients</h4>
+    <div class='container-sm my-3'>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <%= dose.measurement %> <%= dose.ingredient.name %>
+            <%= link_to dose_destroy_path(dose), method: :delete do %>
+          <small><i class='fa fa-minus mx-6'></i></small>
+          <% end %>
+          </li>
+        <% end %>
+      </ul>
 
-<%# [@cocktail, @dose] %>
+      <%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: 'btn btn-outline-dark' %>
+      <%= link_to 'Go Back', cocktails_path, class: 'btn btn-outline-dark' %>
+    </div>
+</div>
