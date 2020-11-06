@@ -1,6 +1,6 @@
 <div class='container banner'>
   <h1>Cocktails</h1>
-  <p>What else?</p>
+  <p>&Beverages</p>
 </div>
 <div class='container my-5'>
   <div class="row">
@@ -18,7 +18,7 @@
           <li class="list-group-item">
             <%= link_to cocktail.name, cocktail_path(cocktail), class: 'text-dark' %>
             <% if cocktail.virgin %>
-              <span class="badge badge-secondary">Virgin</span>
+              <small><span class="badge badge-secondary mx-3">Virgin</span></small>
             <% end %>
           </li>
         <% end %>
