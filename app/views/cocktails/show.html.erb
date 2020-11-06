@@ -6,13 +6,13 @@
       <% end %>
     <div class="d-flex justify-content-between">
       <div>
-        <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill, class: 'mt-4' %>
+        <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill, class: 'mt-4 mb-5 rounded' %> 
       </div>
       <div>
         <% if notice.present? %>
           <%= notice.html_safe %>
         <% end %>
-          <h4 class='my-3'>Ingredients</h4>
+          <h4 class='my-3 mx-3'>Ingredients</h4>
           <div class='container-sm my-3'>
             <ul>
               <% @cocktail.doses.each do |dose| %>
@@ -30,5 +30,6 @@
           </div>
       </div>
     </div>
+    <%= @cocktail.description %>
   </div>
 </div>

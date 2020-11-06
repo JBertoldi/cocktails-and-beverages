@@ -1,7 +1,8 @@
-<div class='container-big pt-5 my-5 w-50'>
+<div class='container-sm pt-5 my-5 w-50'>
   <h3>Create a Cocktail</h3>
   <%= simple_form_for @cocktail, html: { autocomplete: 'off' } do |f| %>
     <%= f.input :name %>
+    <%= f.input :description, as: :text %>
     <%= f.input :photo, as: :file %>
     Virgin? <%= f.input_field :virgin, as: :boolean %>
     <div class='mt-3'>

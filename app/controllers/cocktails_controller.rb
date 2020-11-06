@@ -15,7 +15,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.create(cocktail_params)
 
     if @cocktail.valid?
-      redirect_to cocktail_path(@cocktail), notice: "Rejoyce! <strong>#{@cocktail.name}</strong> was added to the list."
+      redirect_to cocktail_path(@cocktail), notice: "<small>Rejoyce! <strong>#{@cocktail.name}</strong> was added to the list.</small>"
     else
       render :new
     end
@@ -24,6 +24,6 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :virgin, :photo)
+    params.require(:cocktail).permit(:name, :description, :virgin, :photo)
   end
 end
