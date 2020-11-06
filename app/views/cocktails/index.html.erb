@@ -17,9 +17,16 @@
         <% @cocktails.each do |cocktail| %>
           <li class="list-group-item">
             <%= link_to cocktail.name, cocktail_path(cocktail), class: 'text-dark' %>
+
+            <%# como limpar isto %>
             <% if cocktail.virgin %>
               <small><span class="badge badge-pill badge-info mx-3">Virgin</span></small>
             <% end %>
+            <% if cocktail.vegan %>
+              <small><span class="badge badge-pill badge-info mx-3">Vegan</span></small>
+            <% end %>
+
+
           </li>
         <% end %>
       </ul>
@@ -36,3 +43,14 @@
     </div>
   </div>
 <% end %>
+
+<%# 
+  JS
+ -como pesquisar scroll down da pagina
+ -que route usar? é preciso mudar o que?
+
+ SIMPLE FORM
+ -simple_form limite 5/6?
+ -mudar cor do select?
+
+%>
