@@ -4,7 +4,8 @@
     <%= f.input :name %>
     <%= f.input :description, as: :text %>
     <%= f.input :photo, as: :file %>
-    Virgin? <%= f.input_field :virgin, as: :boolean %>
+    Is it alcohol free? <%= f.input_field :virgin, as: :boolean %>
+    Is it vegan? <%= f.input_field :virgin, as: :boolean %>
     <div class='mt-3'>
       <%= f.submit class: 'btn btn-outline-dark' %><%= link_to 'Go Back', cocktails_path, class: 'btn btn-outline-dark mx-5' %>
     </div>
