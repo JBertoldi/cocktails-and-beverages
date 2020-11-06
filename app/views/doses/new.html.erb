@@ -2,9 +2,11 @@
   <h4>Add ingredient</h4>
 
   <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <% if @dose.errors.full_messages == ['Cocktail has already been taken'] %>
+       <%= 'Ingredient already added to recipe' %>
+    <% end %>
     <%= f.association :ingredient, collection: Ingredient.ordered %>
     <%= f.input :measurement %>
-    <%= f.submit class: 'btn btn-outline-dark' %><%= link_to 'Go Back', cocktails_path, class: 'btn btn-outline-dark mx-5' %>
+    <%= f.submit class: 'btn btn-outline-dark' %><%= link_to 'Go Back', cocktail_path(@cocktail), class: 'btn btn-outline-dark mx-5' %>
   <% end %>
 </div>
-

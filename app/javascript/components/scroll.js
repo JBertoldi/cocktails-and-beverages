@@ -13,9 +13,20 @@ const scrollTo = () => {
 
 const scrollToListOnClick = () => {
   const cocktailListButton = document.querySelector('.cocktail-list-btn')
-  cocktailListButton.addEventListener('click', scrollTo);
+  cocktailListButton.addEventListener('click', () => {
+    window.removeEventListener('scroll', noScroll);
+    scrollTo();
+  });
 };
 
+const noScroll = () => {
+  window.scrollTo(0, 0);
+};
+
+// add listener to disable scroll
+const fixedWindow = () => {
+  window.addEventListener('scroll', noScroll);
+};
 
 // const scrollToListOnClick = () => {
 //   const cocktailListButton = document.querySelector('.cocktail-list')
@@ -27,4 +38,4 @@ const scrollToListOnClick = () => {
 
 
 
-export { scrollToListOnClick };
+  export { scrollToListOnClick, fixedWindow };

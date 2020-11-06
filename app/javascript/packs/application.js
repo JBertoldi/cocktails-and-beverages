@@ -9,13 +9,17 @@ require("@rails/activestorage").start()
 require("channels")
 
 import 'bootstrap';
-import { scrollToListOnClick } from '../components/scroll_to_list';
+import { scrollToListOnClick } from '../components/scroll';
+import { fixedWindow } from '../components/scroll';
 
 console.log('load teste lalala');
+
 document.addEventListener('turbolinks:load', () => {
+  fixedWindow();
   scrollToListOnClick();
   console.log('teste funçao');
 });
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

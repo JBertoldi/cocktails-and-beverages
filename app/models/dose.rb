@@ -4,4 +4,5 @@ class Dose < ApplicationRecord
 
   validates :measurement, :cocktail, :ingredient, presence: true
   validates :cocktail, uniqueness: { scope: :ingredient }
+  # validates :cocktail, uniqueness: { message: 'Ingredient already added to list' }
 end
