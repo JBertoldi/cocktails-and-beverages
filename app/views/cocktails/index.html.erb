@@ -1,18 +1,19 @@
 <div class='container banner'>
   <h1>Cocktails</h1>
+  <p>What else?</p>
 </div>
 <div class='container my-5'>
   <div class="row">
     <div class="col-md-3 col-md-offset-3"><%= link_to 'Cocktail List', cocktails_path, class: 'btn btn-outline-dark' %></div>
-    <div class="col-md-3 col-md-offset-3"><%= link_to 'Create', new_cocktail_path, class: 'btn btn-outline-dark' %></div>
+    <div class="col-md-3 col-md-offset-3"><%= link_to 'Create Recipe', new_cocktail_path, class: 'btn btn-outline-dark' %></div>
   </div>
 </div>
 
 <% if @cocktails.any? %>
   <div class="list-container">
     <div class='container mt-5'>
-      <h2>Cocktail List</h2>
-      <ul class="list-group list-group-flush">
+      <h2 class='mb-5 mx-3'>Cocktail List</h2>
+      <ul class="list-group list-group-flush w-50">
         <% @cocktails.each do |cocktail| %>
           <li class="list-group-item">
             <%= link_to cocktail.name, cocktail_path(cocktail), class: 'text-dark' %>
