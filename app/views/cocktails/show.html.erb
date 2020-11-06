@@ -2,10 +2,10 @@
   <div class='container my-5'>
     <h2><%= @cocktail.name %></h2>
      <% if @cocktail.virgin %>
-        <small><span class="badge badge-pill badge-info mx-3">Virgin</span></small>
+        <small><span class="badge badge-pill badge-info mx-2">Virgin</span></small>
       <% end %>
       <% if @cocktail.vegan %>
-        <small><span class="badge badge-pill badge-info mx-3">Vegan</span></small>
+        <small><span class="badge badge-pill badge-success mx-2">Vegan</span></small>
       <% end %>
     <div class="d-flex justify-content-between">
       <div>
@@ -37,4 +37,5 @@
     </div>
     <%= @cocktail.description %>
   </div>
+  <%= link_to 'Delete Cocktail', cocktail_destroy_path(@cocktail), method: :delete, class: 'btn btn-outline-dark' %>
 </div>

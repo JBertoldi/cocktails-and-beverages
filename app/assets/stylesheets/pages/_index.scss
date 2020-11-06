@@ -25,3 +25,7 @@ p {
 .list-container {
   margin-top: 100px;
 }
+
+.list-container, .page {
+  min-height: 100vh;
+}

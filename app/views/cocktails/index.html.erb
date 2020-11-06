@@ -1,48 +1,43 @@
-<div class='container banner'>
-  <h1>Cocktails</h1>
-  <p>&Beverages</p>
-</div>
-<div class='container my-5'>
-  <div class="row">
-    <div class="col-md-3 col-md-offset-3"><%= link_to 'Cocktail List', cocktails_path, class: 'btn btn-outline-dark' %></div>
-    <div class="col-md-3 col-md-offset-3"><%= link_to 'Create Recipe', new_cocktail_path, class: 'btn btn-outline-dark' %></div>
+<div class='page mb-5'>
+  <div class='container banner'>
+    <h1>Cocktails</h1>
+    <p>&Beverages</p>
   </div>
-</div>
-
-<% if @cocktails.any? %>
-  <div class="list-container">
-    <div class='container mt-5'>
-      <h2 class='mb-5 mx-3'>Cocktail List</h2>
-      <ul class="list-group list-group-flush w-50">
-        <% @cocktails.each do |cocktail| %>
-          <li class="list-group-item">
-            <%= link_to cocktail.name, cocktail_path(cocktail), class: 'text-dark' %>
-
-            <%# como limpar isto %>
-            <% if cocktail.virgin %>
-              <small><span class="badge badge-pill badge-info mx-3">Virgin</span></small>
-            <% end %>
-            <% if cocktail.vegan %>
-              <small><span class="badge badge-pill badge-info mx-3">Vegan</span></small>
-            <% end %>
-
-
-          </li>
-        <% end %>
-      </ul>
+  <div class='container my-5'>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-3"><p class='btn btn-outline-dark cocktail-list-btn'>Cocktail List</p></div>
+      <div class="col-md-3 col-md-offset-3"><%= link_to 'Create Recipe', new_cocktail_path, class: 'btn btn-outline-dark' %></div>
     </div>
   </div>
-<% else %>
-  <div class="list-container">
+</div>
+<div class="list-container my-5 py-2">
+  <% if @cocktails.any? %>
       <div class='container mt-5'>
-        <h3>Oh no!</h3>
-        <h6 class="empty-state">
-          There are no cocktails on the list.
-          <strong><%= link_to 'Add one now!', new_cocktail_path %></strong>!
-        </h6>
+        <h2 class='mb-5 mx-3'>Cocktail List</h2>
+        <ul class="list-group list-group-flush w-50">
+          <% @cocktails.each do |cocktail| %>
+            <li class="list-group-item">
+              <%= link_to cocktail.name, cocktail_path(cocktail), class: 'text-dark' %>
+              <% if cocktail.virgin %>
+                <small><span class="badge badge-pill badge-info mx-1">Virgin</span></small>
+              <% end %>
+              <% if cocktail.vegan %>
+                <small><span class="badge badge-pill badge-success mx-1">Vegan</span></small>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+  <% else %>
+    <div class='container mt-5'>
+      <h3>Oh no!</h3>
+      <h6 class="empty-state">
+        There are no cocktails on the list.
+        <strong><%= link_to 'Add one now!', new_cocktail_path %></strong>
+      </h6>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <%# 
   JS
@@ -50,7 +45,7 @@
  -que route usar? é preciso mudar o que?
 
  SIMPLE FORM
- -simple_form limite 5/6?
+ -simple_form limite 5/6? put notice
  -mudar cor do select?
 
 %>
