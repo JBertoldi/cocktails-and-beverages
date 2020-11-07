@@ -49,7 +49,7 @@ li {
 .list-card {
   padding-left: 24px;;
   padding-bottom: 24px;
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.8);
   height: 100vh;
   width: 500px;
   position: absolute;
@@ -84,11 +84,12 @@ li {
 
 .container-recipe {
   width: 800px;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: space-around;
   padding: 50px 0px 0px 50px;
   background-color: rgba(255,255,255,0.6);
+  box-shadow: 1px 1px 3px rgba(53, 53, 53, 0.1);
 }
 
 .container-left {
@@ -114,7 +115,7 @@ li {
 }
 
 .img {
-  box-shadow: 1px 0px 2px rgba(53, 53, 53, 0.5);
+  box-shadow: 1px 1px 3px rgba(53, 53, 53, 0.1);
   margin-bottom: 20px;
 }
 // .container-bottom {

@@ -3,7 +3,7 @@
   <% if  @cocktail.photo.attached? %>
     <%= cl_image_tag @cocktail.photo.key, height: 200, width: 200, crop: :fill, class: 'img' %>
   <% else %>
-    <%= image_tag('cocktails.jpg', height: '200', width: '200') %>
+    <%= image_tag('cocktails.jpg', height: '200', width: '200', class: 'img') %>
   <% end %>
   <ul class='list-group list-group-flush'>
     <li class='list-group-item'>

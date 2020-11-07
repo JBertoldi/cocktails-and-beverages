@@ -14,7 +14,7 @@ class CocktailsController < ApplicationController
   def update
     @cocktail.update(cocktail_params)
 
-    redirect_to cocktail_path(@cocktail), notice: 'Cocktail recipe updated successfully'
+    redirect_to cocktail_path(@cocktail), notice: '<small>Cocktail recipe updated successfully</small>'
   end
   
   def new
@@ -34,7 +34,7 @@ class CocktailsController < ApplicationController
   def destroy
     @cocktail.destroy
 
-    redirect_to cocktails_path
+    redirect_to cocktails_path, notice: '<small>Cocktail deleted.</small>'
   end
 
   private
