@@ -36,5 +36,16 @@
     </div>
     <%= @cocktail.description %>
   </div>
+  <p class='btn btn-outline-dark down-page-btn'>Edit Cocktail</p>
   <%= link_to 'Go Back', cocktails_path, class: 'btn btn-outline-dark' %>
+</div>
+<div class='page container-big pt-5'>
+  <%= simple_form_for @cocktail, html: { autocomplete: 'off' } do |f| %>
+    <%= f.input :name, value: @cocktail.name %>
+    <%= f.input :description, as: :text, value: @cocktail.description %>
+    <%# <%= f.input :photo, as: :file, value: @cocktail.photo.present? @cocktail.photo %>
+    Is it vegan? <%= f.input_field :vegan, as: :boolean, class: 'mr-5' %>
+    Is it alcohol free? <%= f.input_field :virgin, as: :boolean %>
+    <%= f.submit class: 'btn btn-outline-dark' %>
+  <% end %>
 </div>

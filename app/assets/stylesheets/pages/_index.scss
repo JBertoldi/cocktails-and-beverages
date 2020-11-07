@@ -5,6 +5,10 @@ body {
   color: #212121;
 }
 
+.page {
+  height: 100vh;
+}
+
 .banner {
   background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('https://images.unsplash.com/photo-1481391564276-da6fcacaee31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80');
   background-size: cover;
@@ -49,4 +53,8 @@ p {
 }
 .list-group-item {
   background-color: rgba(255,255,255, 0);
+}
+
+.container-big {
+  height: 100vh;
 }

@@ -1,16 +1,16 @@
-<div class='page mb-5'>
+<div class='mb-5'>
   <div class='container banner'>
     <h1>Cocktails</h1>
     <p>&Beverages</p>
   </div>
   <div class='container my-5'>
     <div class="row">
-      <div class="col-md-3 col-md-offset-3"><p class='btn btn-outline-dark cocktail-list-btn'>Cocktail List</p></div>
+      <div class="col-md-3 col-md-offset-3"><p class='btn btn-outline-dark down-page-btn'>Cocktail List</p></div>
       <div class="col-md-3 col-md-offset-3"><%= link_to 'Create Recipe', new_cocktail_path, class: 'btn btn-outline-dark' %></div>
     </div>
   </div>
 </div>
-<div class="list-container">
+<div class="list-container page">
   <% if @cocktails.any? %>
   <div class= 'container-left'>
     <div class='container list-card pt-3 mt-5'>
@@ -39,7 +39,6 @@
       </h6>
     </div>
   <% end %>
-  </div>
 </div>
 
 <%# 
