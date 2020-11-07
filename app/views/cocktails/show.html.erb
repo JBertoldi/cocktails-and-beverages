@@ -1,6 +1,6 @@
 <div class='container-big'>
-  <div class='container my-5'>
-    <h2><%= @cocktail.name %></h2>
+  <div class='container'>
+    <h3><%= @cocktail.name %></h3>
      <% if @cocktail.virgin %>
         <small><span class="badge badge-pill badge-info mx-2">Virgin</span></small>
       <% end %>
@@ -10,15 +10,15 @@
     <div class="d-flex justify-content-between">
       <div>
         <% if  @cocktail.photo.present? %>
-          <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill, class: 'mt-4 mb-5 rounded' %> 
+          <%= cl_image_tag @cocktail.photo.key, height: 200, width: 200, crop: :fill, class: 'mt-4 mb-5 rounded' %> 
         <% end %>
       </div>
       <div>
         <% if notice.present? %>
           <%= notice.html_safe %>
         <% end %>
-          <h4 class='my-3 mx-3'>Ingredients</h4>
-          <div class='container-sm my-3'>
+          <h5 class='my-3 mx-3'>Ingredients</h5>
+          <div class='container-sm mt-3'>
             <ul>
               <% @cocktail.doses.each do |dose| %>
                 <li>
@@ -29,15 +29,15 @@
                 </li>
               <% end %>
             </ul>
-            <%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: 'btn btn-outline-dark' %>
-            <%= link_to 'Delete Cocktail', cocktail_destroy_path(@cocktail), method: :delete, class: 'btn btn-outline-dark' %>
+            <%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: 'btn btn-outline-dark btn-sm' %>
+            <%= link_to 'Delete Cocktail', cocktail_destroy_path(@cocktail), method: :delete, class: 'btn btn-outline-dark btn-sm' %>
           </div>
       </div>
     </div>
     <%= @cocktail.description %>
   </div>
-  <p class='btn btn-outline-dark down-page-btn'>Edit Cocktail</p>
-  <%= link_to 'Go Back', cocktails_path, class: 'btn btn-outline-dark' %>
+  <%= link_to 'Go Back', cocktails_path, class: 'btn btn-outline-dark btn-sm' %>
+  <p class='btn btn-outline-dark down-page-btn btn-sm my-2'>Edit Cocktail</p>
 </div>
 <div class='page container-big pt-5'>
   <%= simple_form_for @cocktail, html: { autocomplete: 'off' } do |f| %>
