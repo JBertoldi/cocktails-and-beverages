@@ -10,12 +10,12 @@
     </div>
   </div>
 </div>
-<div class="list-container page">
+<div class=" page" id="list-container">
   <% if @cocktails.any? %>
-  <div class= 'container-left'>
-    <div class='container list-card pt-3 mt-5'>
+  <div id= 'container-left'>
+    <div class='container list-card pt-3'>
       <h2 class='mb-3 mx-3'>Cocktail List</h2>
-        <ul class="list-group list-group-flush w-50">
+        <ul class="list-group list-group-flush">
           <% @cocktails.each do |cocktail| %>
             <li class="list-group-item">
               <%= link_to cocktail.name, cocktail_path(cocktail), class: 'text-dark' %>
@@ -28,7 +28,9 @@
             </li>
           <% end %>
         </ul>
-      <p>“Drink today, and drown all sorrow<br>You shall perhaps not do it tomorrow<br>Best, while you have it, use your breath<br>There is no drinking after death.”<br> — Ben Jonson</p>
+      <%# <div class='container-right' > %>
+        <%# <p>“Drink today, and drown all sorrow<br>You shall perhaps not do it tomorrow<br>Best, while you have it, use your breath<br>There is no drinking after death.”<br> — Ben Jonson</p> %>
+      <%# </div> %>
     </div>
   <% else %>
     <div class='container mt-5'>
