@@ -14,19 +14,19 @@ const scrollTo = () => {
 const scrollToListOnClick = () => {
   const cocktailListButton = document.querySelector('.down-page-btn')
   cocktailListButton.addEventListener('click', () => {
-    window.removeEventListener('scroll', noScroll);
+    // window.removeEventListener('scroll', noScroll);
     scrollTo();
   });
 };
 
-const noScroll = () => {
-  window.scrollTo(0, 0);
-};
+// const noScroll = () => {
+//   window.scrollTo(0, 0);
+// };
 
 // add listener to disable scroll
-const fixedWindow = () => {
-  window.addEventListener('scroll', noScroll);
-};
+// const fixedWindow = () => {
+//   window.addEventListener('scroll', noScroll);
+// };
 
 // const scrollToListOnClick = () => {
 //   const cocktailListButton = document.querySelector('.cocktail-list')
@@ -38,4 +38,4 @@ const fixedWindow = () => {
 
 
 
-  export { scrollToListOnClick, fixedWindow };
+  export { scrollToListOnClick };
