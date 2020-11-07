@@ -2,8 +2,8 @@
 // const cocktailListButton = document.querySelector('.cocktail-list')
 // const cocktailList = document.querySelector('.list-container')
 const scrollTo = () => {
-  const cocktailList = document.querySelector('.page')
-  cocktailList.scrollIntoView({
+  const downPage = document.querySelector('.page')
+  downPage.scrollIntoView({
     behavior: 'smooth',
     block: 'end',
     inline: 'nearest'
@@ -12,11 +12,8 @@ const scrollTo = () => {
 
 
 const scrollToListOnClick = () => {
-  const cocktailListButton = document.querySelector('.down-page-btn')
-  cocktailListButton.addEventListener('click', () => {
-    // window.removeEventListener('scroll', noScroll);
-    scrollTo();
-  });
+  const downButton = document.querySelector('.down-page-btn')
+  downButton.addEventListener('click', scrollTo);
 };
 
 // const noScroll = () => {

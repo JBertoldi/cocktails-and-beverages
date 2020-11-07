@@ -1,53 +1,56 @@
-<div class='container-big'>
-  <div class='container'>
-    <h3><%= @cocktail.name %></h3>
-     <% if @cocktail.virgin %>
-        <small><span class="badge badge-pill badge-info mx-2">Virgin</span></small>
-      <% end %>
-      <% if @cocktail.vegan %>
-        <small><span class="badge badge-pill badge-success mx-2">Vegan</span></small>
-      <% end %>
-    <div class="d-flex justify-content-between">
+
+<div class='sidebar'>
+  <% if  @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, height: 200, width: 200, crop: :fill, class: 'img' %>
+  <% else %>
+    <%= image_tag('cocktails.jpg', height: '200', width: '200') %>
+  <% end %>
+  <ul class='list-group list-group-flush'>
+    <li class='list-group-item'>
+      <%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: 'text-grey' %>
+    </li>
+    <li class='list-group-item'>
+      <%= link_to 'Edit Cocktail', edit_cocktail_path(@cocktail), class: 'text-grey' %>
+    </li>
+    <li class='list-group-item'>
+      <%= link_to 'Delete Cocktail', cocktail_destroy_path(@cocktail), method: :delete, class: 'text-grey' %>
+    </li>
+    <li class='list-group-item'>
+        <%= link_to 'Go Back', cocktails_path, class: 'text-grey' %>       
+    </li>
+  </ul>
+</div>
+<div class='page-recipe'>
+  <div class='container-recipe'>
+    <div class='container-left'> 
+      <h3><%= @cocktail.name %></h3>
       <div>
-        <% if  @cocktail.photo.attached? %>
-          <%= cl_image_tag @cocktail.photo.key, height: 200, width: 200, crop: :fill, class: 'mt-4 mb-5 rounded' %> 
+        <% if @cocktail.virgin %>
+          <small><span class='badge badge-pill badge-info mx-2'>Virgin</span></small>
+        <% end %>
+        <% if @cocktail.vegan %>
+          <small><span class='badge badge-pill badge-success mx-2'>Vegan</span></small>
         <% end %>
       </div>
-      <div>
-        <% if notice.present? %>
-          <%= notice.html_safe %>
-        <% end %>
-          <h5 class='my-3 mx-3'>Ingredients</h5>
-          <div class='container-sm mt-3'>
-            <ul>
-              <% @cocktail.doses.each do |dose| %>
-                <li>
-                  <%= dose.measurement %> <%= dose.ingredient.name %>
-                  <%= link_to dose_destroy_path(dose), method: :delete do %>
-                <small><i class='fa fa-minus mx-6 text-info'></i></small>
-                <% end %>
-                </li>
-              <% end %>
-            </ul>
-            <%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: 'btn btn-outline-dark btn-sm' %>
-            <%= link_to 'Delete Cocktail', cocktail_destroy_path(@cocktail), method: :delete, class: 'btn btn-outline-dark btn-sm' %>
-          </div>
-      </div>
+      <h5 class='my-2 pb-3 pt-5 mx-3'>Ingredients</h5>
+      <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li>
+          <%= dose.measurement %> <%= dose.ingredient.name %>
+          <%= link_to dose_destroy_path(dose), method: :delete do %>
+            <small><i class='fa fa-minus mx-6 text-info'></i></small>
+          <% end %>
+        </li>
+      <% end %>
+      </ul>  
     </div>
-    <%= @cocktail.description %>
-  </div>
-  <%= link_to 'Go Back', cocktails_path, class: 'btn btn-outline-dark btn-sm' %>
-  <p class='btn btn-outline-dark down-page-btn btn-sm my-2'>Edit Cocktail</p>
-</div>
-<div class='page container-big pt-5'>
-  <div class='container'>
-    <%= simple_form_for @cocktail, html: { autocomplete: 'off' } do |f| %>
-      <%= f.input :name, value: @cocktail.name %>
-      <%= f.input :description, as: :text, value: @cocktail.description %>
-      <%# <%= f.input :photo, as: :file, value: @cocktail.photo.present? @cocktail.photo %>
-      Is it vegan? <%= f.input_field :vegan, as: :boolean, class: 'mr-5' %>
-      Is it alcohol free? <%= f.input_field :virgin, as: :boolean %>
-      <%= f.submit class: 'btn btn-outline-dark' %>
-    <% end %>
+    <div class='container-right'>
+     <% if notice.present? %>
+        <%= notice.html_safe %>
+      <% end %>
+      <h5 class='my-2 pb-3 pt-5'>Description</h5>
+      <%= @cocktail.description %>
+    </div>
   </div>
 </div>
+

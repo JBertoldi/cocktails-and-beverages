@@ -56,15 +56,8 @@ li {
   left: 110px;
 }
 
-// .list-group {
-//   max-width: 100%;
-// }
 .list-group-item {
   background-color: rgba(255,255,255, 0);
-}
-
-.container-big {
-  height: 100vh;
 }
 
 .btn-sm {
@@ -72,3 +65,59 @@ li {
   font-size: 16px;
   border-radius: 8px;
 }
+
+// -----------------------------------------------
+
+.page-recipe {
+  min-height: 100vh;
+  display: flex;
+  margin-left: 420px;
+}
+
+.sidebar {
+  background-color:rgba(234,229,232,0);
+  width: 200px;
+  height: 100vh;
+  margin-left: 150px;
+  position: fixed;
+}
+
+.container-recipe {
+  width: 800px;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0px 0px 50px;
+  background-color: rgba(255,255,255,0.6);
+}
+
+.container-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.container-right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 50px;
+}
+
+.text-grey {
+  color: #212121;
+}
+
+.text-grey:hover  {
+  color: #F14122;
+  text-decoration: none;
+}
+
+.img {
+  box-shadow: 1px 0px 2px rgba(53, 53, 53, 0.5);
+  margin-bottom: 20px;
+}
+// .container-bottom {
+//   display: flex;
+//   align-self: flex-end;
+// }

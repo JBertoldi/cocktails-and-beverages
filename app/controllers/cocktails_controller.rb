@@ -1,17 +1,20 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: %i[show update destroy]
+  before_action :set_cocktail, only: %i[show edit update destroy]
+
   def index
     @cocktails = Cocktail.order(name: :asc)
   end
 
   def show
-    @cocktail = Cocktail.find(params[:id])
+  end
+
+  def edit
   end
 
   def update
     @cocktail.update(cocktail_params)
 
-    redirect_to cocktail_path(@cocktail), notice: 'Cocktail recipe updated successfully :D'
+    redirect_to cocktail_path(@cocktail), notice: 'Cocktail recipe updated successfully'
   end
   
   def new
