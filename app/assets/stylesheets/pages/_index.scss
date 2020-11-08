@@ -5,6 +5,9 @@ body {
   color: #2b2b2b;
 }
 
+.main {
+  position: relative;
+}
 .page {
   max-height: 100vh;
   position: relative;
@@ -100,7 +103,6 @@ li {
 }
 
 .container-recipe {
-  position: relative;
   width: 800px;
   min-height: 100vh;
   display: flex;
@@ -117,10 +119,19 @@ li {
 }
 
 .container-right {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin-right: 50px;
+  position: absolute;
+  width: 300px;
+  right: 22px;
+  bottom: 15px;
+  font-size: 16px;
+}
+
+.container-right p {
+  width: 300px;
+  padding: 0px;
+  margin: 0px;
+  text-shadow: 1px 1px 5px #FFF;
+  text-align: right;
 }
 
 .text-grey, .text-dark {
