@@ -1,9 +1,6 @@
 class DosesController < ApplicationController
   before_action :set_cocktail, except: %i[destroy]
 
-  def new
-    @dose = Dose.new
-  end
 
   def create
     @dose = Dose.new(dose_params)
@@ -12,7 +9,7 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :new
+      redirect_to cocktail_path(@cocktail), notice: 'Oh no! Something went wrong :O Please try again!'
     end
   end
 
@@ -20,7 +17,7 @@ class DosesController < ApplicationController
     @dose = Dose.find(params[:id])
     @dose.destroy
 
-    redirect_to cocktail_path(@dose.cocktail), alert: 'Ingredient deleted'
+    redirect_to cocktail_path(@dose.cocktail), notice: 'Ingredient deleted'
   end
 
   private
