@@ -15,10 +15,11 @@
   <div id= 'container-left'>
     <div class='container list-card pt-3'>
       <h2 class='mb-3 mx-3'>Cocktail List</h2>
-        <ul class="list-group list-group-flush">
+      <div class='scrollable'>
+        <ul class="list-group list-group-flush scrollable">
           <% @cocktails.each do |cocktail| %>
             <li class="list-group-item">
-              <%= link_to cocktail.name.capitalize, cocktail_path(cocktail), class: 'text-dark' %>
+              <%= link_to cocktail.name.capitalize, cocktail_path(cocktail), class: 'text-grey' %>
               <% if cocktail.virgin %>
                 <small><span class="badge badge-pill badge-info mx-1">Virgin</span></small>
               <% end %>
@@ -28,6 +29,7 @@
             </li>
           <% end %>
         </ul>
+      </div>
       <%# <div class='container-right' > %>
         <%# <p>“Drink today, and drown all sorrow<br>You shall perhaps not do it tomorrow<br>Best, while you have it, use your breath<br>There is no drinking after death.”<br> — Ben Jonson</p> %>
       <%# </div> %>
