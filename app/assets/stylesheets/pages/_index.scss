@@ -150,13 +150,61 @@ li {
 
 .form-field {
   height: 28px;
-  width: 200px;
+  width: 198px;
   border: 1px solid #ACACAC;
   border-radius: 4px;
-  font-family: $body-font !important;
-  font-size: 16px;
+  font-family: $body-font;
+  font-size: 16px !important;
 }
 
+#dose_measurement, .form-control, .string, .required, .form-field {
+  margin: 4px 0px;
+}
 .select2-results__options{
   font-size:16px !important;
- }
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border: 1px solid #aaa;
+  height: 28px;
+  font-size:16px !important;
+  width: 180px;
+}
+
+.select2-search--dropdown .select2-search__field {
+  padding: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  width: 198;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #444;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    width: 198;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  display: none;
+}
+
+.card {
+  display: flex;
+  max-width: 278px;
+  padding: 26px 22px 32px 38px;
+  margin: 0 auto;
+}
+
+.card-form {
+  display: flex;
+    flex-direction: column;
+  justify-content: center;
+}
