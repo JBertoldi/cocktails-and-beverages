@@ -2,7 +2,7 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: %i[show edit update destroy]
 
   def index
-    @cocktails = Cocktail.order(name: :asc)
+    @cocktails = Cocktail.all.ordered
   end
 
   def show
