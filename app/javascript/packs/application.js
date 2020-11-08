@@ -11,13 +11,19 @@ require("channels")
 import 'bootstrap';
 import { scrollToListOnClick } from '../components/scroll';
 import { initSelect2 } from '../components/init_select2';
+import { toggleCard } from '../components/toggle_card';
 
 console.log('load test *****');
 
 document.addEventListener('turbolinks:load', () => {
-  initSelect2();
   scrollToListOnClick();
   console.log('test turboload *****');
+});
+
+document.addEventListener('turbolinks:load', () => {
+  toggleCard();
+  initSelect2();
+  console.log('test turboload show *****');
 });
 
 

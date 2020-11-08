@@ -5,12 +5,12 @@
       <%= image_tag('cocktails.jpg', height: '200', width: '200', class: 'img') %>
     <% end %>
     <ul class='list-group list-group-flush'>
-
-      <%= link_to new_cocktail_dose_path(@cocktail), class: 'text-grey' do %>
-      <li class='list-group-item'>
-        Add Ingredient
-      </li>
-      <% end %>
+      
+      <button id="btn-edit">
+        <li class='list-group-item'>
+            Add Ingredient
+        </li>
+      </button>
       <%= link_to edit_cocktail_path(@cocktail), class: 'text-grey' do %>
         <li class='list-group-item'>
           Edit Cocktail
@@ -27,6 +27,18 @@
       </li>
       <% end %>
     </ul>
+    <div class='card'>
+        <div class='card-form'>
+          <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <% if @dose.errors.full_messages == ['Cocktail has already been taken'] %>
+              <%= 'Ingredient already added to recipe' %>
+            <% end %>
+            <%= f.association :ingredient, input_html: { class: 'select2', style: "width: 198px;" }, collection: Ingredient.ordered %>
+            <%= f.input :measurement, input_html: { class: 'form-field' } %>
+            <%= f.submit class: 'btn btn-sm btn-outline-dark mt-3' %><%= link_to 'Go Back', cocktail_path(@cocktail), class: 'btn btn-sm btn-outline-dark mt-3 ml-3' %>
+          <% end %>
+        </div>
+      </div>
   </div>
   <div class='page-recipe'>
     <div class='container-recipe'>
@@ -62,4 +74,6 @@
   </div>
 </div>
 
+<%# <div class="card-container"> %>
 
+<%# </div> %>
