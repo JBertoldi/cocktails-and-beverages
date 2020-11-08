@@ -5,18 +5,27 @@
       <%= image_tag('cocktails.jpg', height: '200', width: '200', class: 'img') %>
     <% end %>
     <ul class='list-group list-group-flush'>
+
+      <%= link_to new_cocktail_dose_path(@cocktail), class: 'text-grey' do %>
       <li class='list-group-item'>
-        <%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: 'text-grey' %>
+        Add Ingredient
       </li>
+      <% end %>
+      <%= link_to edit_cocktail_path(@cocktail), class: 'text-grey' do %>
+        <li class='list-group-item'>
+          Edit Cocktail
+      </li>
+      <% end %>
+      <% link_to cocktail_destroy_path(@cocktail), method: :delete, class: 'text-grey' do %>
       <li class='list-group-item'>
-        <%= link_to 'Edit Cocktail', edit_cocktail_path(@cocktail), class: 'text-grey text-orange' %>
+        Delete Recipe
       </li>
+      <% end %>
+      <%= link_to cocktails_path, class: 'text-grey' do %>  
       <li class='list-group-item'>
-        <%= link_to 'Delete Cocktail', cocktail_destroy_path(@cocktail), method: :delete, class: 'text-grey' %>
+        Go Back
       </li>
-      <li class='list-group-item'>
-          <%= link_to 'Go Back', cocktails_path, class: 'text-grey' %>       
-      </li>
+      <% end %>
     </ul>
   </div>
   <div class='page-recipe'>

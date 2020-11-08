@@ -68,6 +68,13 @@ li {
 }
 .list-group-item {
   background-color: rgba(255,255,255, 0);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.list-group-item:hover {
+  background-color: rgba(238,187,107,0.1);
 }
 
 .btn-sm {
@@ -115,18 +122,18 @@ li {
   margin-right: 50px;
 }
 
-.text-grey {
+.text-grey, .text-dark {
   color: #212121;
 }
 
-.text-orange:hover {
-  color: #F29253;
+.text-grey:hover {
+  text-shadow: 1px 1px 1px rgba(53, 53, 53, 0.1);
+  color: #212121;
+  text-decoration: none;
 }
 
-.text-grey:hover  {
-  text-shadow: 1px 1px 1px rgba(53, 53, 53, 0.1);
+.text-dark:hover {
   text-decoration: none;
-  color: #000000;
 }
 
 .img {
