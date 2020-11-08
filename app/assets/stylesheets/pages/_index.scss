@@ -144,3 +144,19 @@ li {
 //   display: flex;
 //   align-self: flex-end;
 // }
+
+
+// new ingredient
+
+.form-field {
+  height: 28px;
+  width: 200px;
+  border: 1px solid #ACACAC;
+  border-radius: 4px;
+  font-family: $body-font !important;
+  font-size: 16px;
+}
+
+.select2-results__options{
+  font-size:16px !important;
+ }

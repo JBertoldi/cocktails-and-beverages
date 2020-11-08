@@ -10,13 +10,14 @@ require("channels")
 
 import 'bootstrap';
 import { scrollToListOnClick } from '../components/scroll';
-// import { fixedWindow } from '../components/scroll';
+import { initSelect2 } from '../components/init_select2';
 
-console.log('load teste lalala');
+console.log('load test *****');
 
 document.addEventListener('turbolinks:load', () => {
+  initSelect2();
   scrollToListOnClick();
-  console.log('teste funçao');
+  console.log('test turboload *****');
 });
 
 

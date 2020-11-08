@@ -5,8 +5,8 @@
     <% if @dose.errors.full_messages == ['Cocktail has already been taken'] %>
        <%= 'Ingredient already added to recipe' %>
     <% end %>
-    <%= f.association :ingredient, collection: Ingredient.ordered %>
-    <%= f.input :measurement %>
+    <%= f.association :ingredient, input_html: { class: 'select2 form-field' }, collection: Ingredient.ordered %>
+    <%= f.input :measurement, input_html: { class: 'form-field' } %>
     <%= f.submit class: 'btn btn-outline-dark' %><%= link_to 'Go Back', cocktail_path(@cocktail), class: 'btn btn-outline-dark mx-5' %>
   <% end %>
 </div>
