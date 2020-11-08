@@ -2,7 +2,7 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: %i[show edit update destroy]
 
   def index
-    @cocktails = Cocktail.all.ordered
+    @cocktails = Cocktail.order(name: :asc)
   end
 
   def show
@@ -22,9 +22,10 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    @cocktail = Cocktail.create(cocktail_params)
+    @cocktail = Cocktail.new(cocktail_params)
+    @cocktail.name = @cocktail.name.capitalize
 
-    if @cocktail.valid?
+    if @cocktail.save
       redirect_to cocktail_path(@cocktail), notice: "<small>Rejoyce! <strong>#{@cocktail.name}</strong> was added to the list.</small>"
     else
       render :new
