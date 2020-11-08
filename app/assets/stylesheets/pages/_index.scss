@@ -100,6 +100,7 @@ li {
 }
 
 .container-recipe {
+  position: relative;
   width: 800px;
   min-height: 100vh;
   display: flex;
@@ -215,7 +216,7 @@ li {
 
 }
 
-#btn-edit {
+#btn-add, #btn-edit {
   padding: 0px;
   border: none;
   background-color: rgba(255,255,255,0);
@@ -223,16 +224,33 @@ li {
   outline: none;
 }
 
-// .card-container {
-//   display: flex;
-//   width: 500px;
-//   height: 500px;
-//   background-color: rgba(53, 53, 53, 0.7);
-//   border-radius: 8px;
-//   position: absolute;
-//   bottom: 200px;
-//   right: 150px;
-//   // display: none;
-//   align-content: center;
-//   justify-content: center;
-// }
+.card-container {
+  display: flex;
+  width: 750px;
+  height: 500px;
+  background-color: #FFF;
+  border-radius: 8px;
+  position: absolute;
+  right: 158px;
+  top: 20px;
+  display: none;
+  align-content: center;
+  justify-content: center;
+  padding-top: 50px;
+  padding-right: 100px;
+}
+
+.card-update {
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+  align-self: center;
+  display: none;
+  // position: absolute;
+  // right: -36px;
+  // bottom: 151px;
+}
+
+.text-center {
+  text-align: center;
+}

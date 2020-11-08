@@ -2,11 +2,18 @@
 //   $('.card').hide();
 // };
 
-const toggleCard = () => {
-  $('#btn-edit').click(function () {
+const toggleAddIngredient = () => {
+  $('#btn-add').click(function () {
     // $('.card-container').toggle();
-    $('.card').toggle();
+    $('#card-add').toggle();
   });
 };
 
-export { toggleCard };
+const toggleEditCocktail = () => {
+  $('#btn-edit').click(function () {
+    // $('.card-container').toggle();
+    $('.card-edit').toggle();
+  });
+};
+
+export { toggleAddIngredient, toggleEditCocktail };

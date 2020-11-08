@@ -11,7 +11,7 @@ require("channels")
 import 'bootstrap';
 import { scrollToListOnClick } from '../components/scroll';
 import { initSelect2 } from '../components/init_select2';
-import { toggleCard } from '../components/toggle_card';
+import { toggleAddIngredient, toggleEditCocktail } from '../components/toggle_card';
 
 console.log('load test *****');
 
@@ -21,7 +21,8 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 document.addEventListener('turbolinks:load', () => {
-  toggleCard();
+  toggleAddIngredient();
+  toggleEditCocktail();
   initSelect2();
   console.log('test turboload show *****');
 });

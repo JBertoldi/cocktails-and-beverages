@@ -6,28 +6,28 @@
     <% end %>
     <ul class='list-group list-group-flush'>
       
-      <button id="btn-edit">
+      <button id="btn-add">
         <li class='list-group-item'>
             Add Ingredient
         </li>
       </button>
-      <%= link_to edit_cocktail_path(@cocktail), class: 'text-grey' do %>
+      <button id="btn-edit">
         <li class='list-group-item'>
           Edit Cocktail
-      </li>
-      <% end %>
-      <%= link_to cocktail_destroy_path(@cocktail), method: :delete, class: 'text-grey' do %>
+        </li>
+      </button>
+      <%= link_to cocktail_destroy_path(@cocktail), method: :delete, class: 'text-grey text-center' do %>
       <li class='list-group-item'>
         Delete Recipe
       </li>
       <% end %>
-      <%= link_to cocktails_path, class: 'text-grey' do %>  
+      <%= link_to cocktails_path, class: 'text-grey text-center' do %>  
       <li class='list-group-item'>
         Go Back
       </li>
       <% end %>
     </ul>
-    <div class='card'>
+    <div class='card' id='card-add'>
         <div class='card-form'>
           <%= simple_form_for [@cocktail, @dose] do |f| %>
             <% if @dose.errors.full_messages == ['Cocktail has already been taken'] %>
@@ -74,6 +74,21 @@
   </div>
 </div>
 
-<%# <div class="card-container"> %>
-
-<%# </div> %>
+<div class="card-container card-edit">
+  <div class="card-update card-edit">
+    <%= simple_form_for @cocktail, html: { autocomplete: 'off' } do |f| %>
+      <%= f.input :name, value: @cocktail.name %>
+      <%= f.input :description, as: :text, value: @cocktail.description %>
+      <% if @cocktail.photo.attached? %>
+        <%= f.input :photo, as: :file, value: @cocktail.photo.key %>
+      <% else %>
+        <%= f.input :photo, as: :file %>
+      <% end %>
+      Is it vegan? <%= f.input_field :vegan, as: :boolean, class: 'mr-5' %>
+      Is it alcohol free? <%= f.input_field :virgin, as: :boolean %>
+      <div class='mt-3'>
+        <%= f.submit class: 'btn btn-outline-dark' %>
+      </div>
+    <% end %>
+  </div>
+</div>
